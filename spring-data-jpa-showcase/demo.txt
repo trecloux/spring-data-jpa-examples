@@ -1,0 +1,55 @@
+1. Introduction
+---------------
+- Project structure
+- Spring configuration
+- Services
+- Test cases
+
+2. Issues
+---------
+- Generics, simple queries, pagination (no metadata), is new?, arbitrary queries
+- Approach: step by step refactoring -> introduce Hades
+
+3. CustomerRepository
+---------------------
+- add dependency to CustomerServiceImpl
+- replace findById, findAll, save
+- run test
+
+4. Explain general proxy mechanism, SimpleJpaRepository
+-------------------------------------------------
+- show GenericDao interface
+- findAll(Pageable pageble) 
+
+5. AccountRepository
+--------------------
+- replace saven(…)
+- findByCustomer -> show log -> method created from method name
+- explain proxy mechanism, methods signature possibilities (@Param, return types, Pageable, Sort)
+- -> replace findByLastname(Pageable pageable) in CustomerService
+
+6. First summary
+----------------
+- implementation got obsolete
+- switch to after package
+-- alter packages to .after, remove component scan element
+
+7. Custom implementation
+------------------------
+- copy interface and implementation (hint to visibility)
+- adapt AccountRepository
+- copy test case
+- explain implementation class lookup
+
+8. JDBC implementation
+-----------------------
+- copy implementation -> configuration necessary
+- copy XML
+- run tests -> fail (shows that JDBc bean is used)
+- fix SQL by adding FROM -> tests run again
+
+9. Auditing (optional)
+-----------------------
+- show auditing test from Hades sample project
+
+10. Back to slide deck

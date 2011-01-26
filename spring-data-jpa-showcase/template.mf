@@ -1,0 +1,19 @@
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: org.springframework.data.jpa.showcase
+Bundle-Name: ${project.name}
+Bundle-Vendor: SpringSource
+Bundle-Version: ${project.version}
+Bundle-RequiredExecutionEnvironment: J2SE-1.6
+Import-Package: 
+ javax.sql;version="0.0.0",
+ org.hsqldb;version="[1.8.0,1.9.0)"
+Export-Template: 
+ org.springframework.data.jpa.sample.*;version="${project.version}"
+Import-Template: 
+ javax.persistence.*;version="${jpa.version:[=.=.=,+1.0.0)}", 
+ org.springframework.*;version="${spring.version:[=.=.=.=,+1.0.0)}",
+ org.springframework.data.*;version="${project.version:[=.=.=.=,+1.0.0)}",
+ org.joda.time.*;version="${jodatime.version:[=.=.=,+1.0.0]}"
+Import-Library: 
+ org.springframework.spring;version="${spring.version:[=.=.=.=,+1.0.0)}",
+ org.hibernate.ejb;version="[3.5.6,4.0.0]"
