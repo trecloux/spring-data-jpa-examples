@@ -35,7 +35,7 @@ public class BasicSample {
             Persistence.createEntityManagerFactory("jpa.sample.plain");
         em = factory.createEntityManager();
 
-        userRepository = SimpleJpaRepository.create(em, User.class);
+        userRepository = SimpleJpaRepository.create(User.class, em);
 
         em.getTransaction().begin();
     }
